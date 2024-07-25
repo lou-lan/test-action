@@ -33,3 +33,15 @@ jobs:
 
     - name: List downloaded files
       run: ls -al ./downloaded-artifact
+
+    - name: download
+      run: wget https://github.com/lou-lan/test-action/releases/download/v1/egressgateway-agent.tar
+
+    - name: ls
+      run: pwd && ls -l
+
+    - name: scan image
+      uses: aquasecurity/trivy-action@0.24.0
+      with:
+        input: egressgateway-agent.tar
+        severity: 'CRITICAL,HIGH'      
