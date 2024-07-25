@@ -1,3 +1,3 @@
 # test-action
 
-1
+2
