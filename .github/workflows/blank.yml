@@ -44,5 +44,9 @@ jobs:
       uses: aquasecurity/trivy-action@0.24.0
       with:
         input: egressgateway-agent.tar
-        scan-type: 'image'
         severity: 'CRITICAL,HIGH'      
+        scan-type: 'image'
+        hide-progress: false
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        ignore-unfixed: true
